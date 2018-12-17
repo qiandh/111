@@ -71,6 +71,7 @@
 
     <script>
         $(function () {
+            var audio = document.getElementById('music1');
             $('#fullpage').fullpage({
                 anchors: ['page1', 'page2', 'page3', 'page4'],
                 menu: '#menu',
@@ -81,6 +82,12 @@
             });
             $("#menu").delay(5).show(1000)
             $(".musics").on("click", function () { bf(); })
+            $('html').on('click', function () {
+                console.log(1111)
+                audio.play();
+                console.log(audio)
+                
+            });
         })
         function bf() {
             var audio = document.getElementById('music1');
@@ -93,15 +100,15 @@
                 }
             }
         }
-        document.addEventListener('touchstart', function () {
-            function audioAutoPlay() {
-                var audio = document.getElementById('music1');
-                audio.play();
-            }
-            audioAutoPlay();
-        });
+        // $("body").addEventListener('touchstart', function () {
+        //     function audioAutoPlay() {
+        //         var audio = document.getElementById('music1');
+        //         audio.play();
+        //     }
+        //     audioAutoPlay();
+        // });
     </script>
-    <script src="./js//music.js"></script>
+    <script src="./js/music.js"></script>
 </body>
 
 </html>
