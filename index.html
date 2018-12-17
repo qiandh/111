@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="css/base.css">
+<link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="jq/jq.css">
+<link rel="stylesheet" href="css/index.css">
+
+<body>
+
+    <div id="loading">
+        <div id="loading-center">
+            <div id="loading-center-absolute">
+                <div class="object" id="object_one"></div>
+                <div class="object" id="object_two"></div>
+                <div class="object" id="object_three"></div>
+                <div class="object" id="object_four"></div>
+                <div class="object" id="object_five"></div>
+                <div class="object" id="object_six"></div>
+                <div class="object" id="object_seven"></div>
+                <div class="object" id="object_eight"></div>
+                <div class="object" id="object_big"></div>
+            </div>
+        </div>
+    </div>
+    <div id="fullpage">
+        <div class="section first">
+        </div>
+        <div class="section second">
+            这是第2屏
+        </div>
+        <div class="section thrid">
+            这是第3屏
+        </div>
+        <div class="section forth">
+            这是第4屏
+        </div>
+    </div>
+    <ul id="menu">
+        <li data-menuanchor='page1'>
+            <a href="#page1"></a>
+        </li>
+        <li data-menuanchor='page2'>
+            <a href="#page2"></a>
+        </li>
+        <li data-menuanchor='page3'>
+            <a href="#page3"></a>
+        </li>
+        <li data-menuanchor='page4'>
+            <a href="#page4"></a>
+        </li>
+    </ul>
+    <div class="musics">
+        <div class="disk"></div>
+        <div class="cover">
+            <span class="spone" style="display:block;" id="bf"></span>
+            <span class="sptwo" style="display:none;" id="bf"></span>
+        </div>
+        <img src="images/coverr.png">
+        <audio src="./Shahre_Man.mp3" controls="controls" preload id="music1" style="display:none">
+    </div>
+
+    <script src="./js/jquery-3.0.0.min.js"></script>
+    <script src="./js/jquery.fullPage.min.js"></script>
+
+    <script>
+        $(function () {
+            $('#fullpage').fullpage({
+                anchors: ['page1', 'page2', 'page3', 'page4'],
+                menu: '#menu',
+                scrollingSpeed: 1000,
+            });
+            $('#loading').delay(3500).fadeOut(1000, function () {
+                bf();
+            });
+            $("#menu").delay(5).show(1000)
+            $(".musics").on("click", function () { bf(); })
+        })
+        function bf() {
+            var audio = document.getElementById('music1');
+            if (audio !== null) {
+                //检测播放是否已暂停.audio.paused 在播放器播放时返回false.
+                if (audio.paused) {
+                    audio.play();//audio.play();// 这个就是播放  
+                } else {
+                    audio.pause();// 这个就是暂停
+                }
+            }
+        }
+        // document.addEventListener('touchstart', function () {
+        //     function audioAutoPlay() {
+        //         var audio = document.getElementById('music1');
+        //         audio.play();
+        //     }
+        //     audioAutoPlay();
+        // });
+    </script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> 
+    <script type="text/javascript">
+        document.addEventListener("WeixinJSBridgeReady", function () { 
+            document.getElementById('music1').play(); 
+            // document.getElementById('video').play(); 
+        }, false);
+        document.addEventListener('DOMContentLoaded', function () {
+    function audioAutoPlay() {
+        var audio = document.getElementById('music1');
+            audio.play();
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            audio.play();
+        }, false);
+    }
+    audioAutoPlay();
+});
+    </script>
+    <script src="./js//music.js"></script>
+</body>
+
+</html>
