@@ -24,3 +24,17 @@ body,html{
         font-size: 20.7px;
     }
 }
+.clearfix:after{
+    display: block;
+    content: " ";
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+.clearfix{
+    *zoom: 1;
+}
+img{
+    vertical-align: top;
+    border: 0;
+}

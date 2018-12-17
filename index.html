@@ -33,7 +33,7 @@
         <div class="section first">
         </div>
         <div class="section second">
-            这是第2屏222222
+            这是第2屏
         </div>
         <div class="section thrid">
             这是第3屏
@@ -42,18 +42,38 @@
             这是第4屏
         </div>
     </div>
-    <ul id="menu">
+    <div class="zhezhao" style="display:none"></div>
+    <div class="navigation" style="display:none">
+            <div class="pop">
+                <div></div>
+                <img src="images/weixin.png" alt="">
+                <span>WeChat</span>
+            </div>
+    </div>
+    <ul id="menu" style="display:none">
         <li data-menuanchor='page1'>
-            <a href="#page1"></a>
+            <a href="#page1" class="aactive">
+                关于我
+                <span class="span-active"></span>
+            </a>
         </li>
         <li data-menuanchor='page2'>
-            <a href="#page2"></a>
+            <a href="#page2">
+                我的技能
+                <span></span>
+            </a>
         </li>
         <li data-menuanchor='page3'>
-            <a href="#page3"></a>
+            <a href="#page3">
+                我的经历
+                <span></span>
+            </a>
         </li>
         <li data-menuanchor='page4'>
-            <a href="#page4"></a>
+            <a href="#page4">
+                我的大学
+                <span></span>
+            </a>
         </li>
     </ul>
     <div class="musics">
@@ -65,43 +85,97 @@
         <img src="images/coverr.png">
         <audio src="./Shahre_Man.mp3" controls="controls" preload id="music1" style="display:none">
     </div>
+    <!-- 汉堡 -->
+    <div class="hamburger" id="hamburger-1">
+        <div class="nn">
+            <span class="line" id="firstkine"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+    </div>
+
+
+
+
+
+
 
     <script src="./js/jquery-3.0.0.min.js"></script>
     <script src="./js/jquery.fullPage.min.js"></script>
-
+    <script src="./js/music.js"></script>
     <script>
         $(function () {
-            var audio = document.getElementById('music1');
+            //music暂停播放
+            function bf() {
+                var audio = document.getElementById('music1');
+                if (audio !== null) {
+                    //检测播放是否已暂停.audio.paused 在播放器播放时返回false.
+                    if (audio.paused) {
+                        audio.play();//audio.play();// 这个就是播放  
+                    } else {
+                        audio.pause();// 这个就是暂停
+                    }
+                }
+            }
+            $(".musics").on("click", function () { bf(); })
+          
+            var falg = true
+            $(".musics").on("click", function () {
+                $(".cover").css({ display: 'block' })
+                $(".musics").find("span")
+                //让当前li添加类样式
+
+                if (falg) {
+                    $(".spone").css({ display: 'block' });
+                    $(".sptwo").css({ display: 'none' });
+
+                    falg = false
+                } else {
+                    $(".spone").css({ display: 'none' });
+                    $(".sptwo").css({ display: 'block' });
+
+                    falg = true
+                }
+            })
+            //fullpage
             $('#fullpage').fullpage({
                 anchors: ['page1', 'page2', 'page3', 'page4'],
                 menu: '#menu',
                 scrollingSpeed: 1000,
             });
-            $('#loading').delay(1000).fadeOut(1000, function () {
+            //载入页面
+            $('#loading').delay(3).fadeOut(1000, function () {
                 bf();
             });
-            $("#menu").delay(5).show(1000)
-            $(".musics").on("click", function () { bf(); })
-            $('html').on('click', function () {
-                console.log(1111)
-                audio.play();
-                console.log(audio)
-                
+            //汉堡
+            $(".hamburger").click(function () {
+                $(this).toggleClass("is-active");
             });
+
+            $(".hamburger").on("click", function () {
+                $(".zhezhao").toggle();
+                $(".navigation").toggle();
+                $("#menu").toggle();
+            })
+            //点击a 隐藏面板 添加样式
+            $("#menu>li").on("click","a",function(){
+                $(this).parent().siblings("li").find("a").removeClass("aactive")
+                console.log(this)
+                $(this).addClass("aactive")
+                //修改span长度
+                $(this).parent().siblings("li").find("span").removeClass("span-active")
+                $(this).find("span").addClass("span-active")
+                $(".zhezhao").hide();
+                $(".navigation").hide();
+                $("#menu").hide();
+            })
         })
-        function bf() {
-            var audio = document.getElementById('music1');
-            if (audio !== null) {
-                //检测播放是否已暂停.audio.paused 在播放器播放时返回false.
-                if (audio.paused) {
-                    audio.play();//audio.play();// 这个就是播放  
-                } else {
-                    audio.pause();// 这个就是暂停
-                }
-            }
-        }
+
+
+
+
     </script>
-    <script src="./js/music.js"></script>
+
 </body>
 
 </html>
