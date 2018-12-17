@@ -30,8 +30,8 @@
 /* 音乐播放 */
 .musics{
     position: fixed;
-    top: 20px;
-    left: 20px;
+    bottom: 50px;
+    right: 20px;
     width: 60px;
     height: 60px;
 }
