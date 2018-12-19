@@ -30,7 +30,7 @@ $(function () {
     })
     $('html').on('touchstart', function (event) {
         //如果暂停了就不播放了
-        audio.play()
+        // audio.play()
         // console.log(event.target)
         // console.log($(event.target).parents('.musics'))
         // console.log($(event.target).hasClass('musics'))
