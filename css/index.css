@@ -397,9 +397,9 @@
     color: white;
 }
 .onebtmh{
-    font-size:1.44rem;
+    font-size:1.4rem;
     text-align: center;
-    margin-top: 1.77rem;
+    margin-top: 1.35rem;
     position: relative;
 }
 .onebtmhi{
@@ -417,5 +417,5 @@
     font-size: 0.77rem;
     line-height: 1.34rem;
     text-indent: 2em;
-    padding: 5% 5%;
+    padding: 1% 6%;
 }
