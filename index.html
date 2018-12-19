@@ -3,14 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" , user-scalable=no>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Resume</title>
 </head>
 <link rel="stylesheet" href="css/base.css">
 <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="jq/jq.css">
 <link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
 
 <body>
 
@@ -37,9 +38,29 @@
                 <p class="twotopp">Life doesn’t get easier, you just get stronger</p>
                 <p class="threetopp">我叫钱东航</p>
                 <p class="fourtopp">一名前端开发小白</p>
+                <div class="tubiao">
+                    <ul>
+                        <li>
+                        <i class="fa fa-github" aria-hidden="true"></i>
+                        </li>
+                        <li><i class="fa fa-weibo" aria-hidden="true"></i></li>
+                        <li> <i class="fa fa-qq"></i> </li>
+                        <li><i class="fa fa-weixin" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-renren" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-apple" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-android" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
             </div>
             <div class="one-btm">
+                <p class="onebtmh">关于我<i class="onebtmhi"></i></p>
+                <p class="onebtmtext">
+                 您好，我叫钱东航，坐标南京。计算机专业，对前端很感兴趣，所以自学了前端
+                 ，今后的职业规划是朝着前端开发师发展，目前在学vue，react。在自学期间，写过
+                 一些简单的响应式页面，移动端页面，pc端页面，vue页面等。不浮躁，喜欢前端，我相信
+                 成功的道路并不拥挤，只是缺少坚持的人。
 
+                </p>
             </div>
         </div>
         <div class="section second">
@@ -54,11 +75,11 @@
     </div>
     <div class="zhezhao" style="display:none"></div>
     <div class="navigation" style="display:none">
-            <div class="pop">
-                <div></div>
-                <img src="images/weixin.png" alt="">
-                <span>WeChat</span>
-            </div>
+        <div class="pop">
+            <div></div>
+            <img src="images/weixin.png" alt="">
+            <span>WeChat</span>
+        </div>
     </div>
     <ul id="menu" style="display:none">
         <li data-menuanchor='page1'>
@@ -93,7 +114,7 @@
             <span class="sptwo" style="display:none;" id="bf"></span>
         </div>
         <img src="images/coverr.png">
-        <audio src="./Shahre_Man.mp3" controls="controls" preload id="music1" style="display:none">
+        <audio src="./hzj.mp3" controls="controls" preload id="music1" style="display:none">
     </div>
     <!-- 汉堡 -->
     <div class="hamburger" id="hamburger-1">
@@ -113,78 +134,7 @@
     <script src="./js/jquery-3.0.0.min.js"></script>
     <script src="./js/jquery.fullPage.min.js"></script>
     <script src="./js/music.js"></script>
-    <script>
-        $(function () {
-            //music暂停播放
-            function bf() {
-                var audio = document.getElementById('music1');
-                if (audio !== null) {
-                    //检测播放是否已暂停.audio.paused 在播放器播放时返回false.
-                    if (audio.paused) {
-                        audio.play();//audio.play();// 这个就是播放  
-                    } else {
-                        audio.pause();// 这个就是暂停
-                    }
-                }
-            }
-            $(".musics").on("click", function () { bf(); })
-          
-            var falg = true
-            $(".musics").on("click", function () {
-                $(".cover").css({ display: 'block' })
-                $(".musics").find("span")
-                //让当前li添加类样式
-
-                if (falg) {
-                    $(".spone").css({ display: 'block' });
-                    $(".sptwo").css({ display: 'none' });
-
-                    falg = false
-                } else {
-                    $(".spone").css({ display: 'none' });
-                    $(".sptwo").css({ display: 'block' });
-
-                    falg = true
-                }
-            })
-            //fullpage
-            $('#fullpage').fullpage({
-                anchors: ['page1', 'page2', 'page3', 'page4'],
-                menu: '#menu',
-                scrollingSpeed: 1000,
-            });
-            //载入页面
-            $('#loading').delay(3).fadeOut(1000, function () {
-                bf();
-            });
-            //汉堡
-            $(".hamburger").click(function () {
-                $(this).toggleClass("is-active");
-            });
-
-            $(".hamburger").on("click", function () {
-                $(".zhezhao").toggle();
-                $(".navigation").toggle();
-                $("#menu").toggle();
-            })
-            //点击a 隐藏面板 添加样式
-            $("#menu>li").on("click","a",function(){
-                $(this).parent().siblings("li").find("a").removeClass("aactive")
-                console.log(this)
-                $(this).addClass("aactive")
-                //修改span长度
-                $(this).parent().siblings("li").find("span").removeClass("span-active")
-                $(this).find("span").addClass("span-active")
-                $(".zhezhao").hide();
-                $(".navigation").hide();
-                $("#menu").hide();
-            })
-        })
-
-
-
-
-    </script>
+    <script src="./js/index.js"></script>
 
 </body>
 

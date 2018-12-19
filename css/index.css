@@ -237,7 +237,7 @@
 .hamburger{
     width: 3.13rem;
     height: 3.13rem;
-    background-color: pink;
+    /* background-color: pink; */
     position: fixed;
     top: 0.94rem;
     right: 0.94rem;
@@ -247,7 +247,7 @@
 .hamburger .line{
   width: 1.6rem;
   height: 0.15rem;
-  background-color: red;
+  background-color: white;
   display: block;
   margin-top: 0.31rem;
   -webkit-transition: all 0.3s ease-in-out;
@@ -292,46 +292,31 @@
 /* fullpage */
 .one-top{
     width: 100%;
-    height: 60%;
+    height: 63%;
     position: relative;
     overflow: hidden;
-    background: url(../images/top.jpg) no-repeat;
+    background: url(../images/top3.jpg) no-repeat;
     background-size: 100% 100%;
 }
 .one-btm{
     width: 100%;
-    height: 40%;
-    background-color: #337ab7;
-    background: url(../images/timg.jpg) no-repeat;
-    background-size: 100% 100%;
+    height: 37%;
 }
 .onetopdiv{
     position: absolute;
     width: 7.2rem;
     height: 7.2rem;
-    top: 42%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background-color: red;
+    background: url(../images/touxiang.jpg) no-repeat;
+    background-size: 100% 100%;
     border-radius: 50%;
 }
-/* .onetopp{
-    padding-top: 12rem;
-    text-align: center;
-    font-size: 1.25rem;
-    margin: 0;
-}
-.twotopp{
-    text-align: center;
-    font-size: 0.8rem;
-    margin: 0;
-    padding-top: 1%;
-} */
-
 
 .onetopp{
     position: absolute;
-    top: 60%;
+    top: 58%;
     left: 50%;
     transform: translateX(-50%);
     font-size: 1.25rem;
@@ -344,20 +329,21 @@
 }
 .twotopp{
     position: absolute;
-    top: 68%;
+    top: 66%;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     margin: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     color: #333;
+    font-weight: 500;
 }
 .threetopp{
     position: absolute;
-    left: 53%;
-    top: 74%;
+    left: 50%;
+    top: 72%;
     transform: translateX(-50%);
     white-space: nowrap;
     overflow: hidden;
@@ -369,7 +355,7 @@
 .fourtopp{
     position: absolute;
     left: 50%;
-    top: 80%;
+    top: 78%;
     transform: translateX(-50%);
     white-space: nowrap;
     overflow: hidden;
@@ -377,4 +363,59 @@
     margin: 0;
     color: #333;
     font-size: 0.8rem;
+}
+.tubiao{
+    width: 100%;
+    position: absolute;
+    top: 88%;
+    left: 50%;
+    transform: translateX(-50%);
+   
+
+}
+.tubiao ul{
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 7%;
+}
+.tubiao li{
+    list-style: none;
+    float: left;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #404040;
+    position: relative;
+}
+.tubiao li i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+}
+.onebtmh{
+    font-size:1.44rem;
+    text-align: center;
+    margin-top: 1.77rem;
+    position: relative;
+}
+.onebtmhi{
+    height: 0.22rem;
+    width: 3.77rem;
+    position: absolute;
+    transform: translateX(-50%);
+    bottom: -0.27rem;
+    left: 50%;
+    border-radius: 0.1rem;
+    background: rgb(51,122,183);
+    display: none;
+}
+.onebtmtext{
+    font-size: 0.77rem;
+    line-height: 1.34rem;
+    text-indent: 2em;
+    padding: 5% 5%;
 }
