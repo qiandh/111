@@ -399,7 +399,7 @@
 .onebtmh{
     font-size:1.4rem;
     text-align: center;
-    margin-top: 1.35rem;
+    margin-top: 1.3rem;
     position: relative;
 }
 .onebtmhi{
@@ -407,7 +407,7 @@
     width: 3.77rem;
     position: absolute;
     transform: translateX(-50%);
-    bottom: -0.27rem;
+    bottom: -0.22rem;
     left: 50%;
     border-radius: 0.1rem;
     background: rgb(51,122,183);
@@ -417,5 +417,5 @@
     font-size: 0.77rem;
     line-height: 1.34rem;
     text-indent: 2em;
-    padding: 1% 6%;
+    padding: 0% 6%;
 }
